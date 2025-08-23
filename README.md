@@ -91,4 +91,4 @@ We welcome contributions to enhance this project. Feel free to:
 For queries, collaborations, or demo requests:  
 
 Email: [ayyappareddynandipati@gmail.com](mailto:ayyappareddynandipati@gmail.com)  
-LinkedIn: [Ayyappareddy Nandipati](https://www.linkedin.com/in/ayyappareddynandipati)  
+LinkedIn: [Ayyappareddy Nandipati](https://www.linkedin.com/in/ayyappareddynandipati) 
