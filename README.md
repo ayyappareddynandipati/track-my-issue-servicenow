@@ -1,94 +1,59 @@
-# TrackMyIssue – University IT Issue Tracking System  
+# Track My Issue: University IT Issue Tracking on ServiceNow
 
-> A ServiceNow-based IT Service Management (ITSM) solution to streamline helpdesk operations for educational institutions and enterprises.  
+ServiceNow ITSM mini-project that simulates a campus IT helpdesk, where students and staff report IT issues and the IT team tracks them from incident to resolution.
 
----
+**Live demo:** <!-- TODO: add a link to a short screen recording (e.g. YouTube/Loom). ServiceNow developer instances are private, so a video is the best "live" demo. --> _Video walkthrough coming soon_ · **Full project report:** [TrackMyIssue.pdf](TrackMyIssue.pdf)
 
-## Overview  
+![Visual Task Board tracking college IT issues across To Do, Doing and Done](docs/screenshots/visual-task-board.png)
 
-**TrackMyIssue** is a mini-project that simulates a **real-time IT helpdesk environment** using the ServiceNow platform. It allows students and staff to report IT issues while IT teams manage, track, and resolve them efficiently.  
+## Features
 
-This project demonstrates **core ITSM workflows** including:  
+- **Users and roles:** student, IT support (`itil`) and admin users with role-based access.
+- **Custom table and form:** a `University IT Issues` table and form for structured issue reporting.
+- **Incident, Problem and Change Management:** incidents are logged and assigned, recurring incidents are linked to a Problem for root-cause analysis, and the fix goes through a Change Request with approval.
+- **Reports and dashboards:** charts such as incidents by priority and issues by assignee, combined on an IT Helpdesk Overview dashboard.
+- **Visual Task Boards:** Kanban-style boards (New → In Progress → Resolved → Closed) for tracking issues.
+- **Virtual Agent:** chatbot for raising an issue, checking ticket status and basic FAQs.
 
-- User account creation & role-based access  
-- Custom tables & forms for structured data  
-- Incident, problem & change management  
-- Reports & dashboards for analytics  
-- Visual Task Boards (Kanban-style tracking)  
-- Virtual Agent for automated support  
+![Report: University IT Issues grouped by assignee](docs/screenshots/report-incidents-by-assignee.png)
 
-By implementing this system, organizations can **reduce downtime, improve service quality, and enhance user satisfaction**.  
+## Tech Stack
 
----
+ServiceNow (Personal Developer Instance) · ITSM: Incident, Problem, Change · Custom tables and forms · Reports and Dashboards · Visual Task Boards · Virtual Agent · ITIL practices
 
-## Objective  
+## Architecture
 
-To design and implement a **simplified IT Service Management solution** using ServiceNow that enables effective tracking of user issues through **incidents, problems, and changes** while leveraging **automation, dashboards, and task boards** for smarter operations.  
+```
+Student / Staff ──(Form or Virtual Agent)──▶ Incident
+                                               │  recurring incidents linked
+                                               ▼
+                                            Problem ──(root cause)──▶ Change Request ──(approval)──▶ Implemented
+                                               │
+IT Support (itil role) ◀── Visual Task Board ──┘──▶ Reports ──▶ IT Helpdesk Overview dashboard
+```
 
----
+## Getting Started
 
-## Modules Implemented  
+This is a configuration project built inside a ServiceNow instance, so there is no code to install. To explore it:
 
-1. **User Account Creation** – Role-based access for students, IT staff, and admins.  
-2. **Custom Tables & Forms** – For structured incident and problem reporting.  
-3. **Incident Management** – Logging, assigning, and resolving IT issues.  
-4. **Problem Management** – Identifying recurring issues and eliminating root causes.  
-5. **Change Management** – Safely planning and executing IT system changes.  
-6. **Reports & Dashboards** – Real-time analytics for performance monitoring.  
-7. **Visual Task Boards** – Kanban-style drag-and-drop task tracking.  
-8. **Virtual Agent** – AI chatbot for self-service issue reporting and FAQs.  
+1. Read the step-by-step build with screenshots in [`TrackMyIssue.pdf`](TrackMyIssue.pdf).
+2. To rebuild it, request a free Personal Developer Instance at [developer.servicenow.com](https://developer.servicenow.com).
+3. Follow the modules in the report in order: users and roles → custom table and form → Incident → Problem → Change → reports and dashboard → Visual Task Board → Virtual Agent.
 
----
+<!-- TODO: export the scoped application as an update set (System Update Sets → Retrieved/Local) and commit the XML, so others can import it directly. -->
 
-## Key Features  
+## Folder Structure
 
-- **End-to-End ITSM Workflow** – From issue reporting to resolution.  
-- **Root Cause Analysis** – Prevent recurring incidents through problem management.  
-- **Controlled Change Management** – Reduces risks during IT updates.  
-- **Data-Driven Insights** – Reports and dashboards for performance tracking.  
-- **Agile Workflows** – Visual task boards for improved collaboration.  
-- **AI-Powered Support** – Virtual Agent reduces workload on IT teams.  
+```
+track-my-issue-servicenow/
+├── TrackMyIssue.pdf        # Project report with step-by-step screenshots
+├── docs/screenshots/       # Images used in this README
+└── README.md
+```
 
----
+## Author
 
-## Business Value  
+Team project by Jallipalli Kowshik, **Nandipati Ayyappa Reddy** and Pydeti Yeswanth Sai Raghuram.
 
-**Efficiency Boost** – Faster resolution with structured workflows.  
-**Scalability** – Adaptable for both educational and corporate IT helpdesks.  
-**Reduced Downtime** – Proactive problem & change management.  
-**User Satisfaction** – Easy-to-use interface + chatbot support.  
-**Professional ITSM Simulation** – Showcases ServiceNow as a real enterprise tool.  
-
----
-
-## Future Enhancements  
-
-- Integration with **Slack/MS Teams** for instant ticket updates.  
-- Mobile-friendly service portal.  
-- Enhanced AI chatbot with predictive issue detection.  
-- Cloud-native deployment for large-scale adoption.  
-
----
-
-## Conclusion  
-
-**TrackMyIssue** bridges the gap between **academic learning and real-world IT operations**. By leveraging ServiceNow, this project proves how structured ITSM processes can **streamline service delivery, reduce risks, and enhance collaboration**—making it attractive for **universities, enterprises, and IT service providers** alike.  
-
----
-
-## Contributing  
-
-We welcome contributions to enhance this project. Feel free to:  
-
-- Submit pull requests  
-- Suggest new features  
-- Report bugs  
-
----
-
-## Contact  
-
-For queries, collaborations, or demo requests:  
-
-Email: [ayyappareddynandipati@gmail.com](mailto:ayyappareddynandipati@gmail.com)  
-LinkedIn: [Ayyappareddy Nandipati](https://www.linkedin.com/in/ayyappareddynandipati)
+**Ayyappa Reddy Nandipati**, ServiceNow CSA & CAD
+[LinkedIn](https://www.linkedin.com/in/ayyappareddynandipati) · [Portfolio](https://ayyappareddy.vercel.app) · ayyappareddynandipati@gmail.com
